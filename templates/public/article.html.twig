@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PublicController!{% endblock %}
+
+{% block body %}
+<h2>Article</h2>
+
+<div>
+
+<div>
+<p>{{article.id}}</p>
+<p>{{article.Title}}</p>
+<p> Créer le {{ article.date|date("d/m/Y") }} à {{ article.date|date("H:m") }}</p>
+<p>{{article.description}}</p>
+
+<p> Commentaires </p>
+{% for comment in article.comment %}
+<div>
+<p>{{comment.id}}</p>
+<p>{{comment.Title}}</p>
+<p> Créer le {{ comment.date|date("d/m/Y") }} à {{ comment.date|date("H:m") }}</p>
+
+</div>
+
+{% endfor %}
+</div>
+
+</div>
+
+{% endblock %}
